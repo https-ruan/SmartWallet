@@ -25,3 +25,23 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 // Material design icons font path
 $material-design-icons-font-directory-path: "~material-design-icons-iconfont/dist/fonts/";
+
+@import "../assets/fonts/stylesheet";
+
+$branco: #ffffff;
+$preto: #000000;
+$cinza1: #f8f9fa;
+$cinza2: #e9ecef;
+$cinza3: #dee2e6;
+$cinza4: #ced4da;
+
+$azul1: #97dffc;
+$azul2: #93caf6;
+$azul3: #8eb5f0;
+$roxo1: #97dffc;
+$roxo2: #858ae3;
+$roxo3: #613dc1;
+$roxo4: #5829a7;
+$roxo5: #4e148c;
+$roxo6: #461177;
+$roxo7: #3d0e61;
