@@ -1,19 +1,56 @@
 @import "src/theme/theme-variables";
 
-.navbar {
-  position: fixed;
+:host {
+  position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
   z-index: 1;
+  background: rgba($color: $roxo4, $alpha: 0.7);
+  backdrop-filter: blur(10px);
 }
 
-.brand {
-  color: mat-color($app-primary, "default-contrast");
-  text-decoration: none;
-  padding-right: 1rem;
+.logo {
+  position: relative;
+  color: $branco;
+
+  h1 {
+    font-weight: lighter;
+    font-size: 40px;
+  }
+
+  mat-icon {
+    position: absolute;
+    right: -35px;
+    top: 15px;
+    transition: 1s ease;
+  }
+
+  &:hover {
+    mat-icon {
+      top: 0px;
+      color: #f9c80e;
+      transform: rotateY(360deg);
+    }
+  }
 }
 
-.menu-button {
-  margin-right: 1rem;
+.menu {
+  gap: 10px;
+
+  a {
+    color: $branco;
+    font-weight: 500;
+    padding: 5px 10px;
+    border: 2px solid $branco;
+    border-radius: 4px;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $roxo5;
+      background: $branco;
+    }
+  }
 }
