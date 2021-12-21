@@ -1,7 +1,4 @@
-import { Title } from '@angular/platform-browser';
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +6,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Input() sidenav!: MatSidenav;
-
-  constructor(private titleService: Title) {}
+  constructor() {}
 
   ngOnInit() {}
-
-  get title(): string {
-    return this.titleService.getTitle();
-  }
 }
