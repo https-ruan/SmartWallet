@@ -7,9 +7,10 @@ import { MaterialModule } from '@app/material.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from './header/header.component';
 import { ShellComponent } from './shell.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [CommonModule, TranslateModule, FlexLayoutModule, MaterialModule, I18nModule, RouterModule],
-  declarations: [HeaderComponent, ShellComponent],
+  declarations: [HeaderComponent, ShellComponent, FooterComponent],
 })
 export class ShellModule {}

@@ -1,0 +1,14 @@
+@import "src/theme/theme-variables";
+
+:host {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: rgba($color: $roxo4, $alpha: 0.7);
+}
+
+footer {
+  color: $branco;
+  font-size: 20px;
+  text-align: center;
+}
