@@ -56,7 +56,7 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe((event) => {
         const title = event['title'];
         if (title) {
-          this.titleService.setTitle(this.translateService.instant(title));
+          this.titleService.setTitle(`${this.translateService.instant(title)} | SmartWallet`);
         }
       });
   }

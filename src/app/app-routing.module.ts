@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { Shell } from '@app/shell/shell.service';
 
 const routes: Routes = [
   Shell.childRoutes([
     {
       path: 'lancamentos',
-      loadChildren: () => import('./about/about.module').then((m) => m.AboutModule),
+      loadChildren: () => import('./lancamentos/lancamentos.module').then((m) => m.LancamentosModule),
     },
     {
       path: 'metas',
-      loadChildren: () => import('./about/about.module').then((m) => m.AboutModule),
+      loadChildren: () => import('./metas/metas.module').then((m) => m.MetasModule),
     },
   ]),
   // Fallback when no prior route is matched

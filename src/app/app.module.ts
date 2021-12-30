@@ -19,6 +19,8 @@ import { HomeModule } from './home/home.module';
 import { MaterialModule } from './material.module';
 import { ShellModule } from './shell/shell.module';
 import { NgxMaskModule } from 'ngx-mask';
+import { LancamentosModule } from './lancamentos/lancamentos.module';
+import { MetasModule } from './metas/metas.module';
 
 registerLocaleData(ptBr);
 
@@ -35,6 +37,8 @@ registerLocaleData(ptBr);
     SharedModule,
     ShellModule,
     HomeModule,
+    LancamentosModule,
+    MetasModule,
     NgBusyModule.forRoot({
       minDuration: 2000,
       template: LoaderComponent,
