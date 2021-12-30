@@ -10,7 +10,7 @@
           "style": "scss"
         },
         "@schematics/angular:application": {
-          "strict": true
+          "strict": false
         }
       },
       "root": "",
@@ -33,7 +33,11 @@
               "src/manifest.webmanifest",
               "src/assets"
             ],
-            "styles": ["src/main.scss"],
+            "styles": [
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "src/main.scss"
+            ],
             "scripts": []
           },
           "configurations": {

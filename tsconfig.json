@@ -14,7 +14,7 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "strict": true,
+    "strict": false,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es2017",
     "typeRoots": ["node_modules/@types"],
@@ -30,9 +30,9 @@
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true,
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false,
     "preserveWhitespaces": true
   }
 }

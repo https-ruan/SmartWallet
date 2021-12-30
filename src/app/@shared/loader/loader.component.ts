@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./loader.component.scss'],
 })
 export class LoaderComponent implements OnInit {
-  @Input() isLoading = false;
-  @Input() size = 1;
+  @Input() size = 2.5;
+  @Input() strokeWidth = 8;
   @Input() message: string | undefined;
 
   constructor() {}

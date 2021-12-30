@@ -1,0 +1,118 @@
+<section class="container">
+  <h1>
+    Bem vindo de volta, Ruan Araújo!<br />
+    Confira agora os seus relatórios de receitas e despesas.
+  </h1>
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+      <div class="graph">
+        <h2>Relatório Anual</h2>
+        <form #f="ngForm" name="form" class="options flex">
+          <div class="flex flex-dc">
+            <mat-form-field appearance="outline">
+              <mat-label>Ano</mat-label>
+              <input
+                type="text"
+                name="ano"
+                matInput
+                [placeholder]="anoAtual"
+                [(ngModel)]="ano"
+                mask="0000"
+                [minValidator]="2000"
+                [maxValidator]="2099"
+                required
+                (keyup.enter)="enviarAno(ano)"
+              />
+              <mat-error *ngIf="f.controls['ano']?.errors?.minValidator || f.controls['ano']?.errors?.maxValidator"
+                >Digite um ano entre 2000 e 2099.</mat-error
+              >
+              <mat-error *ngIf="f.controls['ano']?.errors?.required">Digite um ano.</mat-error>
+              <mat-error *ngIf="f.controls['ano']?.errors?.mask">Digite um ano válido.</mat-error>
+            </mat-form-field>
+          </div>
+        </form>
+        <ngx-charts-bar-vertical-2d
+          [results]="resultadoAnual"
+          [scheme]="colorScheme"
+          xAxis="true"
+          yAxis="true"
+          legend="true"
+          showXAxisLabel="true"
+          showYAxisLabel="true"
+          legendTitle="Legenda"
+          xAxisLabel="Meses"
+          yAxisLabel="Valores"
+          showGridLines="false"
+          roundDomains="true"
+          groupPadding="5"
+          barPadding="2"
+          maxYAxisTickLength="6"
+        >
+        </ngx-charts-bar-vertical-2d>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="graph">
+        <h2>Relatório Mensal</h2>
+        <form #f="ngForm" name="form" class="options flex">
+          <div class="flex flex-dc">
+            <mat-form-field appearance="outline">
+              <mat-label>Mês e Ano</mat-label>
+              <input
+                name="data"
+                matInput
+                [placeholder]="mesAnoAtual"
+                [(ngModel)]="mesAno"
+                mask="00/0000"
+                [minValidator]="012000"
+                [maxValidator]="122099"
+                required
+                (keyup.enter)="enviarAno(mesAno)"
+              />
+              <mat-error *ngIf="f.controls['data']?.errors?.required">Digite um mês e um ano.</mat-error>
+              <mat-error
+                *ngIf="
+                  f.controls['data']?.errors?.mask ||
+                  f.controls['data']?.errors?.minValidator ||
+                  f.controls['data']?.errors?.maxValidator
+                "
+                >Digite um mês e um ano válido (Ano: 2000 até 2099).</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </form>
+        <ngx-charts-bar-vertical
+          [results]="resultadoMensal"
+          [customColors]="customColors"
+          xAxis="true"
+          yAxis="true"
+          legend="true"
+          showXAxisLabel="true"
+          showYAxisLabel="true"
+          legendTitle="Legenda"
+          xAxisLabel="Categorias"
+          yAxisLabel="Valores"
+          showGridLines="false"
+          roundDomains="true"
+          barPadding="5"
+          maxYAxisTickLength="6"
+        >
+        </ngx-charts-bar-vertical>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="graph">
+        <h2>Relatório Diário</h2>
+        <ngx-charts-pie-chart
+          [results]="resultadoDiario"
+          legend="true"
+          legendTitle="Legenda"
+          labels="true"
+          maxLabelLength="20"
+        >
+        </ngx-charts-pie-chart>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</section>

@@ -87,3 +87,33 @@ ol {
 .flex-dc {
   flex-direction: column;
 }
+
+// XXX: Estilo scroll
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $azul4;
+}
+
+// XXX: Exibe apenas 1 mat-error por vez
+mat-error + mat-error {
+  display: none !important;
+}
+
+// XXX: Estilo carrosel
+owl-carousel-o {
+  .owl-theme .owl-dots .owl-dot {
+    span {
+      transition: 0.3s ease;
+      width: 80px;
+      background: $azul4;
+    }
+
+    &.active span,
+    &:hover span {
+      background: $azul1;
+    }
+  }
+}

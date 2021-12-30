@@ -3,7 +3,7 @@
     "version": "10.1.2",
     "props": {
       "location": "path",
-      "strict": true,
+      "strict": false,
       "skipInstall": false,
       "skipQuickstart": false,
       "initGit": true,
